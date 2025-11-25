@@ -18,11 +18,7 @@ app.add_middleware(
 
 @app.get("/")
 async def root():
-    return {
-        "message": "Daily Digest API", 
-        "version": "0.1.0",
-        "status": "running"
-    }
+    return {"status": "ok"}
 
 @app.get("/health")
 async def health_check():
