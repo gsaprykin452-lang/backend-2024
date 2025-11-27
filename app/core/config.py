@@ -11,13 +11,15 @@ class Settings(BaseSettings):
     DEBUG: bool = False
     API_V1_PREFIX: str = "/api/v1"
     
-    # CORS
+    # CORS - can be extended via CORS_ORIGINS environment variable (comma-separated)
     CORS_ORIGINS: List[str] = [
         "http://localhost:3000",
         "http://localhost:3001",  # Web версия Daily Digest
         "http://localhost:8080",
         "http://127.0.0.1:3000",
         "http://127.0.0.1:3001",
+        # Firebase Hosting URLs will be added via environment variable
+        # Example: CORS_ORIGINS=https://your-project.web.app,https://your-project.firebaseapp.com
     ]
     
     # Database
